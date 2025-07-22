@@ -1,30 +1,21 @@
 #include <iostream>
-#include <string>
-#include <cstdlib>
-#include <ctime>
-
+using namespace std;
 int main() {
-    std::srand(std::time(nullptr));
-    int secret_number = std::rand() % 100 + 1; // random number between 1 and 100
-    int guess = 0;
-    int attempts = 0;
-
-    std::cout << "Welcome to the Guessing Game!" << std::endl;
-    std::cout << "I'm thinking of a number between 1 and 100." << std::endl;
-
-    while (guess != secret_number) {
-        std::cout << "Enter your guess: ";
-        std::cin >> guess;
-        attempts++;
-
-        if (guess < secret_number) {
-            std::cout << "Too low!" << std::endl;
-        } else if (guess > secret_number) {
-            std::cout << "Too high!" << std::endl;
-        } else {
-            std::cout << "Congratulations! You guessed the number in " 
-                      << attempts << " attempts." << std::endl;
-        }
-    }
-    return 0;
+    int a;
+    cout << "Enter Any Four digits : ";
+    cin >> a ;
+    
+    int unit = a%10;
+    int tenth = (a%100)/10;                     //I did This :)
+    int hundred = (a % 1000)/100;
+    int thousand = (a % 10000) /1000;
+    
+    cout << "unit:" << unit << endl;
+    cout << "tenth:" << tenth << endl;
+    cout << "Hundred:" << hundred << endl;
+    cout << "Thousand:" << thousand;
+      
+      return 0;
+  
+    
 }
